@@ -1,0 +1,7 @@
+{
+  "name": "MajosWeb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
