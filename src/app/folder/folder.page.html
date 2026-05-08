@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -7,15 +7,101 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  
+  <div *ngIf="folder === 'Inicio'" class="welcome-container animate__animated animate__fadeIn">
+    <h1 class="main-title">MAJOS WEB</h1>
+    <h2 class="dynamic-text">MARKETING 360</h2>
+    
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline style="width: 100%; display: block;">
+        <source src="assets/MARKETING-TECNO.mp4" type="video/mp4">
+      </video>
+    </div>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button expand="block" color="secondary" shape="round" routerLink="/folder/Contacto" class="pulse-button">
+      INICIAR PROYECTO
+    </ion-button>
+
+    <div class="tools-section ion-margin-top">
+      <p style="color: #00e5ff; font-weight: bold; letter-spacing: 2px;">TECH STACK</p>
+      <div class="tools-icons">
+        <ion-icon name="logo-angular" class="tool-icon"></ion-icon>
+        <ion-icon name="logo-laravel" class="tool-icon"></ion-icon>
+        <ion-icon name="logo-react" class="tool-icon"></ion-icon>
+        <ion-icon name="cube-outline" class="tool-icon"></ion-icon> </div>
+    </div>
+
+    <ion-grid class="ion-margin-top">
+      <ion-row>
+        <ion-col size="6">
+          <ion-card class="service-card" routerLink="/folder/Informacion">
+            <ion-card-content>
+              <ion-icon name="megaphone-outline"></ion-icon>
+              <h3>Ads & RRSS</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card class="service-card" routerLink="/folder/Informacion">
+            <ion-card-content>
+              <ion-icon name="code-working-outline"></ion-icon>
+              <h3>Web Dev</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
+
+  <div *ngIf="folder === 'Informacion'" class="animate__animated animate__fadeIn">
+    <div class="profile-header">
+      <ion-avatar class="main-avatar">
+        <img src="assets/maryNavas.jpg" alt="Mariluz Navas" />
+      </ion-avatar>
+      <h2 class="name-text">Mariluz María Navas Pérez</h2>
+      <ion-badge color="secondary" mode="ios">DISEÑADORA-TSU INFORMÁTICA</ion-badge>
+    </div>
+
+    <ion-list lines="none" style="background: transparent; margin-top: 20px;">
+      <ion-item style="--background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 10px;">
+        <ion-icon name="school-outline" slot="start" color="secondary"></ion-icon>
+        <ion-label>
+          <h3 style="color: white;">TSU en Informática</h3>
+          <p>Ingeniero en formación (Trayecto 3)</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="skills-container">
+      <h3 style="color: #00e5ff;">Experiencia Tecnológico</h3>
+      <ion-chip outline="true" color="secondary" (click)="mostrarInfo('Estrategia Digital')">Estrategia Digital</ion-chip>
+      <ion-chip outline="true" color="secondary" (click)="mostrarInfo('Diseño UI/UX')">Diseño UI/UX</ion-chip>
+      <ion-chip outline="true" color="secondary" (click)="mostrarInfo('Gestión Multimedia')">Gestión Multimedia</ion-chip>
+    </div>
+  </div>
+
+  <div *ngIf="folder === 'Contacto'" class="animate__animated animate__slideInUp">
+    <ion-card class="glass-card">
+      <ion-card-header><ion-card-title style="color: #00e5ff;">¿Hablamos?</ion-card-title></ion-card-header>
+      <ion-card-content>
+        <ion-item fill="outline" class="ion-margin-bottom custom-input">
+          <ion-label position="floating">Tu Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="contacto.nombre"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" class="custom-input">
+          <ion-label position="floating">Mensaje</ion-label>
+          <ion-textarea [(ngModel)]="contacto.mensaje"></ion-textarea>
+        </ion-item>
+        <ion-button expand="block" color="secondary" (click)="enviarFormulario()" style="margin-top: 20px;">ENVIAR RESPUESTA</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" href="https://wa.me/584241878038" target="_blank">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
