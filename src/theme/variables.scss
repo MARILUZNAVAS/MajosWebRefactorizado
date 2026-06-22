@@ -1,20 +1,29 @@
 :root {
-  /* Fondo Negro Profundo */
-  --ion-background-color: #1b1919;
-  --ion-background-color-rgb: 0,0,0;
+  /* --- COLORES BASE (MODO CLARO POR DEFECTO) --- */
+  --fondo-app: #ffffff;
+  --texto-app: #000000;
+  --azul-marca: #3b82f6;
+  --azul-oscuro: #e2e8f0;
+  --rojo-error: #ff3b30;
+}
 
-  /* Texto Blanco Puro para que brille */
-  --ion-text-color: #ffffff;
-  --ion-text-color-rgb: 255,255,255;
+/* --- MODO OSCURO (TU DISEÑO BRUTAL) --- */
+.dark {
+  :root {
+    --fondo-app: #000000;           /* Negro total */
+    --texto-app: #ffffff;           /* Blanco puro */
+    --azul-marca: #3b82f6;          /* Azul brillante */
+    --azul-oscuro: #1e293b;         /* Azul medianoche */
+    --rojo-error: #ff3b30;          /* Rojo alerta */
+  }
+}
 
-  /* Colores de Marca: Azul y Cian */
-  --ion-color-primary: #09b932; 
-  --ion-color-primary-contrast: #ffffff;
-  
-  --ion-color-secondary: #0bb644;
-  --ion-color-secondary-contrast: #0c582f;
-
-  /* Estilo de las tarjetas (Gris muy oscuro para que se vean sobre el negro) */
-  --ion-item-background: #141313;
-  --ion-card-background: #0a0808;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo-app: #000000;           /* Negro total */
+    --texto-app: #ffffff;           /* Blanco puro */
+    --azul-marca: #3b82f6;          /* Azul brillante */
+    --azul-oscuro: #1e293b;         /* Azul medianoche */
+    --rojo-error: #ff3b30;          /* Rojo alerta */
+  }
 }

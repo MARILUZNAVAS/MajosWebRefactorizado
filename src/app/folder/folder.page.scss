@@ -1,42 +1,151 @@
-ion-content { --background: #121212 !important; }
-
-/* Animación de entrada suave */
-.animate__fadeIn {
-  animation: fadeIn 0.8s ease-in;
+/* --- 1. FONDO NEGRO TOTAL --- */
+ion-content { 
+  --background: #000000 !important; 
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* --- 2. BARRA SUPERIOR AZUL MEDIANOCHE --- */
+ion-toolbar {
+  --background: #1e293b !important;
+  --color: #ffffff !important;
 }
 
-.main-title { font-size: 2.8rem; font-weight: 900; color: #00e5ff; text-align: center; margin: 0; }
-.dynamic-text { color: white; letter-spacing: 3px; text-align: center; }
-.video-wrapper { border-radius: 20px; overflow: hidden; border: 1px solid #00e5ff; margin: 20px 0; }
-
-/* Tech Stack Icons */
-.tools-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-  .tool-icon {
-    font-size: 28px;
-    color: #a0aec0;
-    transition: 0.3s;
-    &:hover { color: #00e5ff; transform: scale(1.2); }
-  }
+/* --- 3. TEXTOS BLANCOS (GENERAL) --- */
+h1, h2, h3, h4, p, span, ion-label, ion-card-title, ion-card-subtitle, ion-title, ion-note {
+  color: #ffffff !important;
 }
 
-.service-card { 
-  --background: rgba(255, 255, 255, 0.05); 
-  color: white; 
-  cursor: pointer; 
-  text-align: center;
-  ion-icon { font-size: 30px; color: #00e5ff; }
+/* --- 4. TÍTULO PRINCIPAL (AZUL BRILLANTE) --- */
+.main-title { 
+  color: #3b82f6 !important; 
+  font-weight: bold;
 }
 
-.main-avatar { width: 150px; height: 150px; margin: 0 auto; border: 4px solid #00e5ff; }
-.name-text { color: white; font-weight: 800; margin-top: 15px; text-align: center; }
-.glass-card { --background: rgba(255, 255, 255, 0.05); color: white; border-radius: 20px; }
-.custom-input { --background: transparent; --color: white; }
+/* --- 5. TARJETAS Y BOTONES --- */
+.service-card, .portfolio-card, .glass-card, ion-button {
+  --background: #1e293b !important; /* Azul Medianoche */
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important; /* Borde Azul Brillante */
+}
+
+/* --- 6. INPUTS (AZUL MEDIANOCHE Y BORDE ROJO SI HAY ERROR) --- */
+ion-item {
+  --background: #1e293b !important;
+  --color: #ffffff !important;
+  --border-color: #3b82f6 !important;
+  --highlight-color-focused: #3b82f6 !important;
+}
+
+.ion-invalid {
+  --border-color: #ff3b30 !important;
+  --highlight-color-focused: #ff3b30 !important;
+}
+
+/* --- 7. ICONOS (TAMAÑO BRUTAL) --- */
+/* Iconos estándar */
+ion-icon { 
+  color: #ffffff !important; 
+  font-size: 28px !important; 
+}
+
+/* Iconos de Proyectos (Más grandes) */
+.project-card-icon {
+  color: #ffffff !important;
+  font-size: 56px !important; /* Tamaño aumentado */
+  display: block;
+  margin: 10px auto;
+}
+
+/* --- 8. MENSAJES DE ERROR (ROJO + ANIMACIÓN) --- */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.error-message {
+  color: #ff3b30 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* --- 9. BOTONES REDES SOCIALES --- */
+.whatsapp-btn { --background: #25D366 !important; }
+.instagram-btn { --background: #3b82f6 !important; }/* --- 1. FONDO NEGRO TOTAL --- */
+ion-content { 
+  --background: #000000 !important; 
+}
+
+/* --- 2. BARRA SUPERIOR AZUL MEDIANOCHE --- */
+ion-toolbar {
+  --background: #1e293b !important;
+  --color: #ffffff !important;
+}
+
+/* --- 3. TEXTOS BLANCOS (GENERAL) --- */
+h1, h2, h3, h4, p, span, ion-label, ion-card-title, ion-card-subtitle, ion-title, ion-note {
+  color: #ffffff !important;
+}
+
+/* --- 4. TÍTULO PRINCIPAL (AZUL BRILLANTE) --- */
+.main-title { 
+  color: #3b82f6 !important; 
+  font-weight: bold;
+}
+
+/* --- 5. TARJETAS Y BOTONES --- */
+.service-card, .portfolio-card, .glass-card, ion-button {
+  --background: #1e293b !important; /* Azul Medianoche */
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important; /* Borde Azul Brillante */
+}
+
+/* --- 6. INPUTS (AZUL MEDIANOCHE Y BORDE ROJO SI HAY ERROR) --- */
+ion-item {
+  --background: #1e293b !important;
+  --color: #ffffff !important;
+  --border-color: #3b82f6 !important;
+  --highlight-color-focused: #3b82f6 !important;
+}
+
+.ion-invalid {
+  --border-color: #ff3b30 !important;
+  --highlight-color-focused: #ff3b30 !important;
+}
+
+/* --- 7. ICONOS (TAMAÑO BRUTAL) --- */
+/* Iconos estándar */
+ion-icon { 
+  color: #ffffff !important; 
+  font-size: 28px !important; 
+}
+
+/* Iconos de Proyectos (Más grandes) */
+.project-card-icon {
+  color: #ffffff !important;
+  font-size: 56px !important; /* Tamaño aumentado */
+  display: block;
+  margin: 10px auto;
+}
+
+/* --- 8. MENSAJES DE ERROR (ROJO + ANIMACIÓN) --- */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.error-message {
+  color: #ff3b30 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* --- 9. BOTONES REDES SOCIALES --- */
+.whatsapp-btn { --background: #25D366 !important; }
+.instagram-btn { --background: #3b82f6 !important; }
